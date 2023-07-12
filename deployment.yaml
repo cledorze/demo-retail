@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodstoregif
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: foodstoregif
+  template:
+    metadata:
+      labels:
+        app: foodstoregif
+    spec:
+      containers:
+      - name: foodstoregif
+        image: totovld/foodstoregif:1
+        ports:
+        - containerPort: 8080
